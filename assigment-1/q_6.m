@@ -16,11 +16,20 @@
 %      State assumptions.  Are any of the treatments differentin this case (find out via post hoc testing)?
 %      Perform an assessment of the sources of variance in the model and describe where they come from.  
 %      What are different between this approach and that done in (a
+close all; 
 %% a) assume 8 different locations RCBD
 data = importdata('Q6.mat');
 % create the sub matrixes
 [p,tbl,stats] = anova2(data,10);
-
-c1 = multcompare(stats);
+figure();
 c2 = multcompare(stats,'Estimate','row');
-%c3 = multcompare(stats,'Estimate','column');
+figure();
+c3 = multcompare(stats,'Estimate','column');
+
+%% b) assume it was all done on one site 10 different days 
+[p2,tbl2,stats2] = anova2(data,8);
+
+figure();
+c4 = multcompare(stats2,'Estimate','row');
+figure();
+c5 = multcompare(stats2,'Estimate','column');

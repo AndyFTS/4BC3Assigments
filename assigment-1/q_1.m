@@ -31,9 +31,21 @@ mltipleRegressionLogModel = x*blog;
 % compare residuals
 figure(1);
 plotResiduals(linearm,'fitted');
+xlabel('Y')
+ylabel('Residual')
+title("Residual Plots");
 figure(2);
 plotResiduals(logm,'fitted');
+xlabel('Y')
+ylabel('Residual LOG(DATA)')
+title("Residual Plots LOG(DATA)");
 figure(3);
 plot(linearm);
+xlabel('X')
+ylabel('Time (Number of days)')
+title("Regressional Analysis on DATA");
 figure(4);
 plot(logm);
+xlabel('X')
+ylabel('LOG(Time (Number of days))')
+title("Regressional Analysis on LOG(DATA)");

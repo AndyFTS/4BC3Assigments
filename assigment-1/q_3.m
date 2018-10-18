@@ -30,3 +30,5 @@ xlabel('time (m)');
 ylabel('log(concentration)');
 exp_fit 
 log_fit
+concentration_at_zero = 22.39 + 4.183;
+concentration_at_zero
