@@ -1,4 +1,4 @@
-%% Q_1
+% Q_1
 % (15 Marks) Consider the data Q1.txt. This data was taken from 54 patients
 % who underwent liver resection for  hepatocarcinoma.  Prior to the operation 
 % measurements of blood clotting time (CLOT), liver enzyme glutamate:oxaloacetate transaminase (GOT) 
@@ -14,12 +14,12 @@ syms CLOT GOT LIV PROG ;
 data = importdata('Q1.txt');
 % linear
 y = data(:,6);
-X = [ones(54,1) data(:,2) data(:,3) data(:,4) data(:,5)]; % matlab help says to put a column of ones in the matrix idno why
+X = [ones(54,1) data(:,2) data(:,3) data(:,4) data(:,5)]; 
 [blin,bintlin,rlin,rintlin,statslin] = regress(y,X);
 lintable =table(X(:,2),X(:,3),X(:,4),X(:,5),y,'VariableNames',{'CLOT','GOT','LIV','PROG','TIME'});
 linearm = fitlm(lintable,'TIME~CLOT+GOT+LIV+PROG');
 x = [1 CLOT GOT LIV PROG]; 
-mltipleRegressionLinModel = x*blin;
+mltipleRegressionLinModel = x*double(blin)
 % because CLOT has the largest coefficient b1 we can infer that CLOT has
 % the most impact on post-operation survivial 
 %logarithmic 

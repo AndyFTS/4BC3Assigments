@@ -12,4 +12,15 @@
 data = importdata('Q2.txt');
 [~,~,stats] = anova2(data,15,'on');
 c = multcompare(stats);
+means = stats.colmeans; 
+
+% calculate fischers LSD intervals for each test
+lsdtable = zeros(5,5);
+for n=1:5
+    for j = 2:6
+        [base,calc] = LSDCompare(means(1,n),means(1,j),stats.df,stats.sigmasq,0.05,15,15);
+        lsdtable(n,j) = calc;
+        base
+    end
+end
 

@@ -33,3 +33,15 @@ figure();
 c4 = multcompare(stats2,'Estimate','row');
 figure();
 c5 = multcompare(stats2,'Estimate','column');
+
+means = stats.colmeans; 
+
+% calculate fischers LSD intervals for each test
+lsdtable = zeros(7,7);
+for n=1:6
+    for j = 2:7
+        [base,calc] = LSDCompare(means(1,n),means(1,j),stats.df,stats.sigmasq,0.05,15,15);
+        lsdtable(n,j) = calc;
+        base;
+    end
+end

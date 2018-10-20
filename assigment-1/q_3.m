@@ -22,12 +22,12 @@ figure(1);
 plot(exp_fit,time,concentration);
 title('concentration vs time fit with exponential');
 xlabel('time (m)');
-ylabel('concentration');
+ylabel('concentration (\mum)');
 figure(2);
 plot(log_fit,time,log(concentration));
 title('log(concentration) vs time fit with linear polynomial');
 xlabel('time (m)');
-ylabel('log(concentration)');
+ylabel('log(concentration (\mum))');
 exp_fit 
 log_fit
 concentration_at_zero = 22.39 + 4.183;
