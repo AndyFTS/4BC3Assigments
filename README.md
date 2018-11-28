@@ -1,2 +1,3 @@
-# 4BC3Assigments
-McMaster University ELEC ENG 4BC3 assigments
+# Modeling of Biological Systems
+McMaster University Student Project
+advanced mathematical and statistical models applied to biological data for analysis
