@@ -3,7 +3,7 @@ function [filter]= waveletfilterresponse(wname,fs)
 % corresponding wavelet filter, wname 
 [~,~,h,~] = wfilters(wname);
 figure;
-freqz(h,fs); 
+freqz(100*h,fs); 
 title(strcat("Filter Response of "+wname+" Filter"));
 filter = h; 
 end
